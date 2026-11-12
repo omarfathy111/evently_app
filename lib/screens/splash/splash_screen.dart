@@ -26,7 +26,7 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Stack(
         alignment: AlignmentGeometry.center,
         children: [
-          Center(child: Image.asset(AppAssets.eventlyPng, fit: BoxFit.cover)),
+          Center(child: Image.asset(AppAssets.eventlyLogoLight, fit: BoxFit.cover)),
 
           Padding(
             padding: const EdgeInsets.only(bottom: 100),

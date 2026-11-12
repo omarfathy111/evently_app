@@ -28,7 +28,7 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
       body: Column(
         spacing: 27,
         children: [
-          ImageWidget(imagePath: AppAssets.eventlyPng, height: 27, width: 142),
+          ImageWidget(imagePath: AppAssets.eventlyLogoLight, height: 27, width: 142),
           ImageWidget(
             imagePath: AppAssets.beingCreative,
             height: 343,

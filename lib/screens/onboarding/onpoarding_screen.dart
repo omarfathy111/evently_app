@@ -16,7 +16,7 @@ class OnBoardingPageState extends State<OnBoardingPage> {
   int currentIndex = 0;
 
   void _onIntroEnd(BuildContext context) {
-    Navigator.pushReplacementNamed(context, AppRoutes.homeRouteName);
+    Navigator.pushReplacementNamed(context, AppRoutes.loginRouteName);
   }
 
   Widget _buildImage(
@@ -53,7 +53,7 @@ class OnBoardingPageState extends State<OnBoardingPage> {
             padding: const EdgeInsets.only(top: 40),
             child: Stack(
               children: [
-                _buildImage(AppAssets.eventlyPng, height: 27, width: 142),
+                _buildImage(AppAssets.eventlyLogoLight, height: 27, width: 142),
               ],
             ),
           ),
