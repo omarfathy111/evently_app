@@ -121,8 +121,8 @@ class LoginScreen extends StatelessWidget {
                     child: CustomElevatedButton(
                       onPressed: () {
                         login();
-                        // Navigator.of(context)
-                        //     .pushReplacementNamed(AppRoutes.homeRouteName);
+                        Navigator.of(context)
+                            .pushReplacementNamed(AppRoutes.homeRouteName);
                       },
                       backgroundColor: Theme.of(context).cardColor,
                       child: Text(

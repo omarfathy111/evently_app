@@ -12,13 +12,22 @@ import 'package:evently_app/screens/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class RegisterScreen extends StatelessWidget {
-  RegisterScreen({super.key});
+class RegisterScreen extends StatefulWidget {
+ const RegisterScreen({super.key});
 
+  @override
+  State<RegisterScreen> createState() => _RegisterScreenState();
+}
+
+class _RegisterScreenState extends State<RegisterScreen> {
   var emailTextContatroller = TextEditingController();
+
   var nameTextContatroller = TextEditingController();
+
   var repasswordTextContatroller = TextEditingController();
+
   var passwordTextContatroller = TextEditingController();
+
   var formKey = GlobalKey<FormState>();
 
   @override

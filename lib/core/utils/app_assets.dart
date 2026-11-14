@@ -11,5 +11,11 @@ class AppAssets {
  static const String userIcon = 'assets/images/user.png';
  static const String profilePic = 'assets/images/Profile pic.png';
  static const String googleLogo= 'assets/images/image-6.png';
+ static const String birthdayDarkColor= 'assets/images/birthdayDarkColor.png';
+ static const String birthdayLightColor= 'assets/images/birthdayLightColor.png';
+ static const String imageSportLight= 'assets/images/imageSportLight.png';
+ static const String imageSportDark= 'assets/images/imageSportDark.png';
+ static const String bookClubLight= 'assets/images/bookClubLight.png';
+ static const String bookClubDark= 'assets/images/bookClubDark.png';
 
 }

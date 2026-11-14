@@ -1,5 +1,6 @@
 import 'package:evently_app/core/utils/app_assets.dart';
 import 'package:evently_app/core/utils/app_colors.dart';
+import 'package:evently_app/core/utils/app_size_utils.dart';
 import 'package:evently_app/l10n/app_localizations.dart';
 import 'package:evently_app/providers/app_language_provider.dart';
 import 'package:evently_app/providers/app_theme_provider.dart';
@@ -26,7 +27,6 @@ class _HomeScreenState extends State<HomeScreen> {
     var themeProvider = Provider.of<AppThemeProvider>(context);
 
     return Scaffold(
-     
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: selectedIndex,
         onTap: (index) {
@@ -57,7 +57,13 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
 
       body: SafeArea(
-        child: IndexedStack(index: selectedIndex, children: tabs),
+        child: Padding(
+          padding: EdgeInsetsGeometry.symmetric(
+            horizontal: AppSizeUtils.getwidth(context) * 0.04,
+            vertical: AppSizeUtils.getwidth(context) * 0.04
+          ),
+          child: IndexedStack(index: selectedIndex, children: tabs),
+        ),
       ),
     );
   }
