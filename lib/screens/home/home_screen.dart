@@ -1,14 +1,12 @@
 import 'package:evently_app/core/utils/app_assets.dart';
 import 'package:evently_app/core/utils/app_colors.dart';
+import 'package:evently_app/core/utils/app_routes.dart';
 import 'package:evently_app/core/utils/app_size_utils.dart';
 import 'package:evently_app/l10n/app_localizations.dart';
-import 'package:evently_app/providers/app_language_provider.dart';
-import 'package:evently_app/providers/app_theme_provider.dart';
 import 'package:evently_app/screens/tabs/favorite/favorite_tab.dart';
 import 'package:evently_app/screens/tabs/home/home_tab.dart';
 import 'package:evently_app/screens/tabs/profile/profile_tab.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -24,8 +22,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    var themeProvider = Provider.of<AppThemeProvider>(context);
-
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: selectedIndex,
@@ -52,7 +48,9 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).pushNamed(AppRoutes.addEventRouteName);
+        },
         child: Icon(Icons.add, color: AppColors.whiteColor),
       ),
 
@@ -60,7 +58,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Padding(
           padding: EdgeInsetsGeometry.symmetric(
             horizontal: AppSizeUtils.getwidth(context) * 0.04,
-            vertical: AppSizeUtils.getwidth(context) * 0.04
+            vertical: AppSizeUtils.getwidth(context) * 0.04,
           ),
           child: IndexedStack(index: selectedIndex, children: tabs),
         ),

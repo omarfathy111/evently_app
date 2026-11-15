@@ -163,6 +163,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       if(text != passwordTextContatroller.text){
                         return 'Re-Password doesnt match Password';
                       }
+                      return null;
                     },
                   ),
 

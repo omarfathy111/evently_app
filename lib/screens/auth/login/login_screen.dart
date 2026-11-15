@@ -12,12 +12,19 @@ import 'package:evently_app/screens/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
   LoginScreen({super.key});
 
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
   var emailTextContatroller = TextEditingController();
+
   var passwordTextContatroller = TextEditingController();
-   var formKey = GlobalKey<FormState>();
+
+  var formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +51,8 @@ class LoginScreen extends StatelessWidget {
                     width: 142,
                   ),
                   TextWidget(
-                    textName: AppLocalizations.of(context)!.login_to_your_account,
+                    textName: AppLocalizations.of(context)!
+                        .login_to_your_account,
                     style: Theme.of(context).textTheme.headlineSmall,
                   ),
                   CustomTextField(
@@ -67,7 +75,7 @@ class LoginScreen extends StatelessWidget {
                       final bool emailValid = RegExp(
                         r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+",
                       ).hasMatch(emailTextContatroller.text);
-              
+
                       if (!emailValid) {
                         return 'please enter valid email';
                       }
@@ -78,7 +86,8 @@ class LoginScreen extends StatelessWidget {
                     borderColor: Theme.of(context).highlightColor,
                     filled: true,
                     fillColor: Theme.of(context).highlightColor,
-                    hintText: AppLocalizations.of(context)!.please_enter_password,
+                    hintText: AppLocalizations.of(context)!
+                        .please_enter_password,
                     hintStyle: Theme.of(context).textTheme.bodyLarge,
                     keyboardType: TextInputType.visiblePassword,
                     prefixIcon: Icon(
@@ -94,10 +103,10 @@ class LoginScreen extends StatelessWidget {
                     obscureText: true,
                     controller: passwordTextContatroller,
                     validator: (text) {
-                      if(text!.trim().isEmpty || text == null){
-                          return 'please enter your password';
+                      if (text!.trim().isEmpty || text == null) {
+                        return 'please enter your password';
                       }
-                      if(text.length <6){
+                      if (text.length < 6) {
                         return 'Password should be at least 6 chars';
                       }
                       return null;
@@ -109,7 +118,8 @@ class LoginScreen extends StatelessWidget {
                       TextButton(
                         onPressed: () {},
                         child: TextWidget(
-                          textName: AppLocalizations.of(context)!.forget_password,
+                          textName: AppLocalizations.of(context)!
+                              .forget_password,
                           style: Theme.of(context).textTheme.labelLarge
                               ?.copyWith(decoration: TextDecoration.underline),
                         ),
@@ -121,8 +131,6 @@ class LoginScreen extends StatelessWidget {
                     child: CustomElevatedButton(
                       onPressed: () {
                         login();
-                        Navigator.of(context)
-                            .pushReplacementNamed(AppRoutes.homeRouteName);
                       },
                       backgroundColor: Theme.of(context).cardColor,
                       child: Text(
@@ -145,11 +153,12 @@ class LoginScreen extends StatelessWidget {
                         },
                         child: Text(
                           AppLocalizations.of(context)!.sign_up,
-                          style: Theme.of(context).textTheme.labelLarge?.copyWith(
-                            decoration: TextDecoration.underline,
-                            decorationThickness: 2,
-                            decorationColor: Theme.of(context).cardColor,
-                          ),
+                          style: Theme.of(context).textTheme.labelLarge
+                              ?.copyWith(
+                                decoration: TextDecoration.underline,
+                                decorationThickness: 2,
+                                decorationColor: Theme.of(context).cardColor,
+                              ),
                         ),
                       ),
                     ],
@@ -206,9 +215,9 @@ class LoginScreen extends StatelessWidget {
     );
   }
 
-  void login(){
-    if(formKey.currentState!.validate() == true){
-
+  void login() {
+    if (formKey.currentState!.validate() == true) {
+      Navigator.of(context).pushReplacementNamed(AppRoutes.homeRouteName);
     }
   }
 }

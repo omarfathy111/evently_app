@@ -16,6 +16,10 @@ class AppTheme {
           backgroundColor: AppColors.mainLightColor,
           shape: StadiumBorder()
       ),
+      appBarTheme: AppBarThemeData(
+        backgroundColor: AppColors.lightBgColor,
+        centerTitle: true
+      ),
       cardColor: AppColors.mainLightColor,
       dividerColor: AppColors.strokeWhiteColor,
     highlightColor: AppColors.whiteColor,
@@ -47,6 +51,10 @@ class AppTheme {
       floatingActionButtonTheme: FloatingActionButtonThemeData(
           backgroundColor: AppColors.mainDarkColor,
           shape: StadiumBorder()
+      ),
+      appBarTheme: AppBarThemeData(
+        backgroundColor: AppColors.darkBgColor,
+        centerTitle: true
       ),
       cardColor: AppColors.mainDarkColor,
       dividerColor: AppColors.mainLightColor,
